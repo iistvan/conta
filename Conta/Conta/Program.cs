@@ -1,5 +1,5 @@
 ﻿/*
- * Gyuri
+ * Attila
  * Created by SharpDevelop.
  * User: Istvan
  * Date: 14.08.2014
@@ -15,7 +15,9 @@ using Conta.Ui;
 
 namespace Conta
 {
-	/// <summary>
+	/// <summary>/// <summary>
+	/// ///
+	/// </summary>
 	/// Class with program entry point.
 	/// </summary>
 	internal sealed class Program

@@ -9,6 +9,20 @@ C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\obj\Debug\Conta.Ui.N
 C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\obj\Debug\Conta.Ui.LoginForm.resources
 C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\obj\Debug\Conta.Ui.MainForm.resources
 C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\bin\Debug\MySql.Data.dll
+<<<<<<< HEAD
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\bin\Debug\Conta.exe.config
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\bin\Debug\Conta.exe
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\bin\Debug\Conta.pdb
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\bin\Debug\MySql.Data.dll
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\obj\Debug\Conta.csprojResolveAssemblyReference.cache
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\obj\Debug\Conta.Ui.LoginForm.resources
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\obj\Debug\Conta.Ui.MainForm.resources
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\obj\Debug\Conta.Ui.NewUser.resources
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\obj\Debug\Conta.csproj.GenerateResource.Cache
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\obj\Debug\Conta.exe
+C:\Users\Shiva\Documents\SharpDevelop Projects\Conta\conta\Conta\Conta\obj\Debug\Conta.pdb
+=======
 C:\Users\Istvan\Documents\Projektek\conta\Conta\Conta\bin\Debug\Conta.exe.config
 C:\Users\Istvan\Documents\Projektek\conta\Conta\Conta\obj\Debug\Conta.exe
 C:\Users\Istvan\Documents\Projektek\conta\Conta\Conta\obj\Debug\Conta.pdb
+>>>>>>> e5d64b14b1f4f897c2ec1376c59ddff70b0a9c39
