@@ -14,7 +14,9 @@ using Conta.Ui;
 
 namespace Conta
 {
-	/// <summary>
+	/// <summary>/// <summary>
+	/// ///
+	/// </summary>
 	/// Class with program entry point.
 	/// </summary>
 	internal sealed class Program
