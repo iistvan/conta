@@ -1,7 +1,7 @@
 ﻿/*
  * Attila
  * Gyuri
- * Created by SharpDevelop.
+ * pista
  * User: Istvan
  * Date: 14.08.2014
  * Time: 11:58
