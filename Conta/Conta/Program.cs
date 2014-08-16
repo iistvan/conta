@@ -14,9 +14,6 @@ using Conta.Ui;
 
 namespace Conta
 {
-		/// <summary>
-		/// ez itt a komment
-		/// </summary>
 	/// <summary>
 	/// Class with program entry point.
 	/// </summary>
