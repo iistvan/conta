@@ -9,3 +9,6 @@ C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\obj\Debug\Conta.Ui.N
 C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\obj\Debug\Conta.Ui.LoginForm.resources
 C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\obj\Debug\Conta.Ui.MainForm.resources
 C:\Users\Istvan\Documents\SharpDevelop Projects\Conta\Conta\bin\Debug\MySql.Data.dll
+C:\Users\Istvan\Documents\Projektek\conta\Conta\Conta\bin\Debug\Conta.exe.config
+C:\Users\Istvan\Documents\Projektek\conta\Conta\Conta\obj\Debug\Conta.exe
+C:\Users\Istvan\Documents\Projektek\conta\Conta\Conta\obj\Debug\Conta.pdb
