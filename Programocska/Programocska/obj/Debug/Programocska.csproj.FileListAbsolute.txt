@@ -1,0 +1,7 @@
+C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\bin\Debug\Programocska.exe
+C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\bin\Debug\Programocska.pdb
+C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.csprojResolveAssemblyReference.cache
+C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.exe
+C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.pdb
+C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.MainForm.resources
+C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.csproj.GenerateResource.Cache
