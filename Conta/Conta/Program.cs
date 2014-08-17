@@ -1,11 +1,7 @@
 ﻿/*
- * Attila
- * Gyuri
- * pista
  * User: Istvan
  * Date: 14.08.2014
  * Time: 11:58
- * Geza
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
@@ -16,12 +12,7 @@ using Conta.Controller;
 using Conta.Ui;
 
 namespace Conta
-{
-	/// <summary>/// <summary>
-	/// ///
-	/// </summary>
-	/// Class with program entry point.
-	/// </summary>
+{	
 	internal sealed class Program
 	{
 		/// <summary>

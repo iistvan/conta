@@ -23,15 +23,21 @@ namespace Conta.Ui
 		public LoginForm(Ctrl ctrl)	{			
 			InitializeComponent();			
 			this.ctrl = ctrl;
+			PopulateCmbUtilizatori();
+		}
+		
+		private void PopulateCmbUtilizatori() {
+			foreach (String s in ctrl.GetUtilizatori())
+				cmbUtilizatori.Items.Add(s);
 		}
 		
 		void BtnLoginClick(object sender, EventArgs e) {
-			string username = txtUser.Text;
+			string username = cmbUtilizatori.Text;
 			string pass = txtPass.Text;
 			if (ctrl.Login(username, pass))
 				this.Dispose();
 			else
-				MessageBox.Show("Utilizator sau parola incorecta!", "Autentificare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);			
+				MessageBox.Show("Parola incorecta!", "Autentificare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);			
 		}
 		
 		void LoginFormFormClosing(object sender, FormClosingEventArgs e) {

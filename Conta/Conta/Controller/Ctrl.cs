@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Collections.Generic;
 using Conta.Ui;
 using Conta.Repository;
 using System.Windows.Forms;
@@ -33,6 +34,10 @@ namespace Conta.Controller
 		
 		public Boolean Login(string u, string p) {
 			return repo.Login(u, p);
+		}
+		
+		public List<String> GetUtilizatori() {
+			return repo.GetUtilizatori();
 		}
 		
 		public void AddNewUser(string u, string p, string d) {
