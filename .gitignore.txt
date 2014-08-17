@@ -1,0 +1,2 @@
+/Conta/Conta/bin
+/Conta/Conta/obj
