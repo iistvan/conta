@@ -5,3 +5,10 @@ C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Deb
 C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.pdb
 C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.MainForm.resources
 C:\Users\Shiva\Documents\SharpDevelop Projects\Programocska\Programocska\obj\Debug\Programocska.csproj.GenerateResource.Cache
+C:\Users\Istvan\Documents\Projektek\conta\Programocska\Programocska\bin\Debug\Programocska.exe
+C:\Users\Istvan\Documents\Projektek\conta\Programocska\Programocska\bin\Debug\Programocska.pdb
+C:\Users\Istvan\Documents\Projektek\conta\Programocska\Programocska\obj\Debug\Programocska.csprojResolveAssemblyReference.cache
+C:\Users\Istvan\Documents\Projektek\conta\Programocska\Programocska\obj\Debug\Programocska.MainForm.resources
+C:\Users\Istvan\Documents\Projektek\conta\Programocska\Programocska\obj\Debug\Programocska.csproj.GenerateResource.Cache
+C:\Users\Istvan\Documents\Projektek\conta\Programocska\Programocska\obj\Debug\Programocska.exe
+C:\Users\Istvan\Documents\Projektek\conta\Programocska\Programocska\obj\Debug\Programocska.pdb
