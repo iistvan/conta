@@ -13,13 +13,11 @@ using Conta.Repository;
 using System.Windows.Forms;
 
 
-namespace Conta.Controller
-{
+namespace Conta.Controller {
 	/// <summary>
 	/// Description of Controller.
 	/// </summary>
-	public class Ctrl
-	{
+	public class Ctrl {
 		Repo repo;
 		
 		public Ctrl(Repo repo) {
