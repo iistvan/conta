@@ -31,6 +31,13 @@ namespace Conta.Ui
 			this.ctrl = ctrl;
 			this.IsMdiContainer = true;
 			
+			//Adatbazishoz kapcsolodas teszt			
+			if (!ctrl.TestConnectionToDB()) {				
+				Application.Exit();
+				return;
+			}
+			
+			//Van-e felhasznalo mar az adatbazisban?
 			if (ctrl.FreshInstall()) {
 				newUser = new NewUser(ctrl);
 				newUser.MdiParent = this;

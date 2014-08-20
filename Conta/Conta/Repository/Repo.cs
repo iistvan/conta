@@ -41,6 +41,17 @@ namespace Conta.Repository {
 			connection = new MySqlConnection(connectionString);
 		}
 		
+		public Boolean TestConnectionToDB() {
+			try {
+				connection.Open();
+			} catch (MySqlException ex) {
+				MessageBox.Show("Test: Eroare la conectare la baza de date:\n" + ex.Message, "Eroare conectare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				Application.Exit();
+				return false;
+			}
+			connection.Close();
+			return true;
+		}
 		
 		//open connection to database
 		public bool OpenConnection() {
@@ -48,21 +59,9 @@ namespace Conta.Repository {
 				connection.Open();
 				return true;
 			} catch (MySqlException ex) {
-				//When handling errors, you can your application's response based on the error number.
-				//The two most common error numbers when connecting are as follows:
-				//0: Cannot connect to server.
-				//1045: Invalid user name and/or password.
-				switch (ex.Number) {
-					case 0:
-						MessageBox.Show("Cannot connect to server.  Contact administrator");
-						break;
-						
-					case 1045:
-						MessageBox.Show("Invalid username/password, please try again");
-						break;
-				}
-				return false;
+				MessageBox.Show("OpenConnection: Eroare la conectare la baza de date:\n" + ex.Message, "Eroare conectare", MessageBoxButtons.OK, MessageBoxIcon.Error);				
 			}
+			return false;
 		}
 		
 		//Close connection
@@ -71,10 +70,72 @@ namespace Conta.Repository {
 				connection.Close();
 				return true;
 			} catch (MySqlException ex) {
-				MessageBox.Show(ex.Message);
-				return false;
+				MessageBox.Show("CloseConnection: Eroare la conectare la baza de date:\n" + ex.Message, "Eroare conectare", MessageBoxButtons.OK, MessageBoxIcon.Error);	
+			}
+			return false;
+		}
+		
+		//Check no of existing users in DB
+		public int NrOfUsersInDB() {
+			string query = "SELECT Count(*) FROM Utilizatori";
+			int Count = -1;
+			
+			//Open Connection
+			if (this.OpenConnection() == true) {
+				//Create Mysql Command
+				MySqlCommand cmd = new MySqlCommand(query, connection);
+				
+				//ExecuteScalar will return one value
+				Count = int.Parse(cmd.ExecuteScalar() + "");
+				
+				//close Connection
+				this.CloseConnection();
+				
+				return Count;
+			} else {
+				return Count;
 			}
 		}
+		
+		public Boolean Login(string u, string p) {
+			string query = "SELECT Count(*) FROM Utilizatori where nume = '" + u + "' and parola = '" + p + "'";
+			int Count = -1;
+			
+			//Open Connection
+			if (this.OpenConnection() == true) {
+				//Create Mysql Command
+				MySqlCommand cmd = new MySqlCommand(query, connection);
+				
+				//ExecuteScalar will return one value
+				Count = int.Parse(cmd.ExecuteScalar() + "");
+				
+				//close Connection
+				this.CloseConnection();
+			}
+			if (Count < 1)
+				return false;
+			return true;
+		}
+		
+		public void AddNewUser(string u, string p, string d) {
+//			string query = "INSERT INTO Utilizatori values;
+		}
+		
+		public List<String> GetUtilizatori() {
+			List<String> utilizatori = new List<String>();
+			MySqlDataReader dr;
+			if (this.OpenConnection()) {
+				MySqlCommand cmd = new MySqlCommand("SELECT nume FROM Utilizatori", connection);
+				dr = cmd.ExecuteReader();
+
+				while (dr.Read())
+					utilizatori.Add(dr[0].ToString());
+  
+				dr.Close();
+				this.CloseConnection();
+			}
+			return utilizatori;
+		}		
 		
 		//Insert statement
 		public void Insert() {
@@ -162,69 +223,7 @@ namespace Conta.Repository {
 			} else {
 				return list;
 			}
-		}
-		
-		//Check no of existing users in DB
-		public int NrOfUsersInDB() {
-			string query = "SELECT Count(*) FROM Utilizatori";
-			int Count = -1;
-			
-			//Open Connection
-			if (this.OpenConnection() == true) {
-				//Create Mysql Command
-				MySqlCommand cmd = new MySqlCommand(query, connection);
-				
-				//ExecuteScalar will return one value
-				Count = int.Parse(cmd.ExecuteScalar() + "");
-				
-				//close Connection
-				this.CloseConnection();
-				
-				return Count;
-			} else {
-				return Count;
-			}
-		}
-		
-		public Boolean Login(string u, string p) {
-			string query = "SELECT Count(*) FROM Utilizatori where nume = '" + u + "' and parola = '" + p + "'";
-			int Count = -1;
-			
-			//Open Connection
-			if (this.OpenConnection() == true) {
-				//Create Mysql Command
-				MySqlCommand cmd = new MySqlCommand(query, connection);
-				
-				//ExecuteScalar will return one value
-				Count = int.Parse(cmd.ExecuteScalar() + "");
-				
-				//close Connection
-				this.CloseConnection();
-			}
-			if (Count < 1)
-				return false;
-			return true;
-		}
-		
-		public void AddNewUser(string u, string p, string d) {
-//			string query = "INSERT INTO Utilizatori values;
-		}
-		
-		public List<String> GetUtilizatori() {
-			List<String> utilizatori = new List<String>();
-			MySqlDataReader dr;
-			if (this.OpenConnection()) {
-				MySqlCommand cmd = new MySqlCommand("SELECT nume FROM Utilizatori", connection);
-				dr = cmd.ExecuteReader();
-
-				while (dr.Read())
-					utilizatori.Add(dr[0].ToString());
-  
-				dr.Close();
-				this.CloseConnection();
-			}
-			return utilizatori;
-		}
+		}	
 		
 		public int Count() {
 			string query = "SELECT Count(*) FROM Utilizatori";

@@ -24,8 +24,12 @@ namespace Conta.Controller {
 			this.repo = repo;
 		}
 		
+		public Boolean TestConnectionToDB() {
+			return repo.TestConnectionToDB();			
+		}
+		
 		public Boolean FreshInstall() {
-			if (repo.NrOfUsersInDB() < 1)
+			if (repo.NrOfUsersInDB() == 0)
 				return true;
 			return false;
 		}
