@@ -54,7 +54,7 @@ namespace Conta.Ui
 			this.lblUser.Location = new System.Drawing.Point(107, 22);
 			this.lblUser.Name = "lblUser";
 			this.lblUser.Size = new System.Drawing.Size(67, 21);
-			this.lblUser.TabIndex = 0;
+			this.lblUser.TabIndex = 4;
 			this.lblUser.Text = "Utilizator";
 			// 
 			// lblPass
@@ -63,7 +63,7 @@ namespace Conta.Ui
 			this.lblPass.Location = new System.Drawing.Point(107, 56);
 			this.lblPass.Name = "lblPass";
 			this.lblPass.Size = new System.Drawing.Size(53, 23);
-			this.lblPass.TabIndex = 1;
+			this.lblPass.TabIndex = 5;
 			this.lblPass.Text = "Parola";
 			// 
 			// txtPass
@@ -73,7 +73,9 @@ namespace Conta.Ui
 			this.txtPass.Name = "txtPass";
 			this.txtPass.PasswordChar = '*';
 			this.txtPass.Size = new System.Drawing.Size(147, 20);
-			this.txtPass.TabIndex = 4;
+			this.txtPass.TabIndex = 1;
+			this.txtPass.Enter += new System.EventHandler(this.TxtPassEnter);
+			this.txtPass.Leave += new System.EventHandler(this.TxtPassLeave);
 			// 
 			// btnLogin
 			// 
@@ -82,7 +84,7 @@ namespace Conta.Ui
 			this.btnLogin.Location = new System.Drawing.Point(251, 109);
 			this.btnLogin.Name = "btnLogin";
 			this.btnLogin.Size = new System.Drawing.Size(83, 23);
-			this.btnLogin.TabIndex = 5;
+			this.btnLogin.TabIndex = 2;
 			this.btnLogin.Text = "✓ Login";
 			this.btnLogin.UseVisualStyleBackColor = true;
 			this.btnLogin.Click += new System.EventHandler(this.BtnLoginClick);
@@ -94,7 +96,7 @@ namespace Conta.Ui
 			this.btnIesire.Location = new System.Drawing.Point(12, 109);
 			this.btnIesire.Name = "btnIesire";
 			this.btnIesire.Size = new System.Drawing.Size(75, 23);
-			this.btnIesire.TabIndex = 6;
+			this.btnIesire.TabIndex = 3;
 			this.btnIesire.Text = "Iesire";
 			this.btnIesire.UseVisualStyleBackColor = true;
 			this.btnIesire.Click += new System.EventHandler(this.BtnIesireClick);
@@ -105,8 +107,10 @@ namespace Conta.Ui
 			this.cmbUtilizatori.Location = new System.Drawing.Point(166, 21);
 			this.cmbUtilizatori.Name = "cmbUtilizatori";
 			this.cmbUtilizatori.Size = new System.Drawing.Size(147, 21);
-			this.cmbUtilizatori.TabIndex = 8;
+			this.cmbUtilizatori.TabIndex = 0;
 			this.cmbUtilizatori.SelectedIndexChanged += new System.EventHandler(this.CmbUtilizatoriSelectedIndexChanged);
+			this.cmbUtilizatori.Enter += new System.EventHandler(this.CmbUtilizatoriEnter);
+			this.cmbUtilizatori.Leave += new System.EventHandler(this.CmbUtilizatoriLeave);
 			// 
 			// label1
 			// 
@@ -145,6 +149,7 @@ namespace Conta.Ui
 			this.Controls.Add(this.lblUser);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "LoginForm";
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Autentificare";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginFormFormClosing);

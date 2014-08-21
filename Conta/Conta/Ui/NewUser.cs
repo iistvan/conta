@@ -32,7 +32,10 @@ namespace Conta.Ui {
             string drepturi = cmbDrepturi.Text;
 
             if (AreFieldsValid())
-                ctrl.AddNewUser(username, pass, drepturi);
+            	if (ctrl.AddNewUser(username, pass, drepturi)) { // Ha sikeresen hozzaadta
+            		MessageBox.Show("Utilizatorul a fost adaugat cu succes.", "Adaugare reusita", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            		this.Close();
+            	}
         }
 
         private Boolean AreFieldsValid() {
@@ -42,11 +45,11 @@ namespace Conta.Ui {
             Regex validator = new Regex(@"^[a-z][a-z0-9]+$");
 
             if (!validator.Match(txtUser.Text).Success)
-                errors.AppendLine("Numele de utilizator poate contine doar litere si cifre.");
+                errors.AppendLine("Numele de utilizator poate contine doar litere mici si cifre.");
 
             //Validate pass
             if (!validator.Match(txtPass.Text).Success)
-                errors.AppendLine("Parola poate contine doar litere si cifre.");
+                errors.AppendLine("Parola poate contine doar litere mici si cifre.");
 
             //Validate drepturi		   
             string drepturi = cmbDrepturi.Text;

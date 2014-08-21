@@ -37,6 +37,7 @@ namespace Conta.Ui
 			} else {
 				loginForm = new LoginForm(ctrl);
 				loginForm.MdiParent = this;
+//				loginForm.Owner = this;
 				loginForm.Show();	
 				
 //				loginForm.ShowDialog();

@@ -117,17 +117,20 @@ namespace Conta.Repository {
 			return true;
 		}
 		
-		public void AddNewUser(string u, string p, string d) {
+		public Boolean AddNewUser(string u, string p, string d) {
 			string query = "INSERT INTO Utilizatori (nume, parola, drepturi) VALUES ('" + u + "', '" + p + "', '" + d + "')";
+			Boolean sikerult = true;
 			if (this.OpenConnection() == true) {
 				MySqlCommand cmd = new MySqlCommand(query, connection);
 				try {
 					cmd.ExecuteNonQuery();				
 				} catch (MySqlException ex) {
 					MessageBox.Show(ex.Message);
+					sikerult = false;
 				}
 				this.CloseConnection();
 			}
+			return sikerult;
 		}
 		
 		public List<String> GetUtilizatori() {

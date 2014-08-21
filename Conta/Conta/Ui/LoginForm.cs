@@ -11,16 +11,14 @@ using System.Drawing;
 using System.Windows.Forms;
 using Conta.Controller;
 
-namespace Conta.Ui
-{
+namespace Conta.Ui {
 	/// <summary>
 	/// Login window
 	/// </summary>
-	public partial class LoginForm : Form
-	{
+	public partial class LoginForm : Form {
 		Ctrl ctrl;
 		
-		public LoginForm(Ctrl ctrl)	{			
+		public LoginForm(Ctrl ctrl) {			
 			InitializeComponent();			
 			this.ctrl = ctrl;
 			PopulateCmbUtilizatori();
@@ -29,6 +27,7 @@ namespace Conta.Ui
 		private void PopulateCmbUtilizatori() {
 			foreach (String s in ctrl.GetUtilizatori())
 				cmbUtilizatori.Items.Add(s);
+//			cmbUtilizatori.Focus();
 		}
 		
 		void BtnLoginClick(object sender, EventArgs e) {
@@ -47,8 +46,25 @@ namespace Conta.Ui
 		void BtnIesireClick(object sender, EventArgs e) {
 			ctrl.Exit();
 		}
+		
 		void CmbUtilizatoriSelectedIndexChanged(object sender, EventArgs e) {
 			txtPass.Focus();
+		}
+		
+		void TxtPassEnter(object sender, EventArgs e) {
+			txtPass.BackColor = Color.LightGoldenrodYellow;
+		}
+		
+		void TxtPassLeave(object sender, EventArgs e) {
+			txtPass.BackColor = Color.White;
+		}
+		
+		void CmbUtilizatoriEnter(object sender, EventArgs e) {
+			cmbUtilizatori.BackColor = Color.LightGoldenrodYellow;
+		}
+		
+		void CmbUtilizatoriLeave(object sender, EventArgs e) {
+			cmbUtilizatori.BackColor = Color.White;
 		}
 	}
 }
