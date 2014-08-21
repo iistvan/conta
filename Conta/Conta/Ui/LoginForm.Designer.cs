@@ -106,11 +106,12 @@ namespace Conta.Ui
 			this.cmbUtilizatori.Name = "cmbUtilizatori";
 			this.cmbUtilizatori.Size = new System.Drawing.Size(147, 21);
 			this.cmbUtilizatori.TabIndex = 8;
+			this.cmbUtilizatori.SelectedIndexChanged += new System.EventHandler(this.CmbUtilizatoriSelectedIndexChanged);
 			// 
 			// label1
 			// 
 			this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.label1.Location = new System.Drawing.Point(-1, 97);
+			this.label1.Location = new System.Drawing.Point(0, 97);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(347, 2);
 			this.label1.TabIndex = 9;

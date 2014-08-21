@@ -21,17 +21,15 @@ namespace Conta.Ui {
         Ctrl ctrl;
 
         public NewUser(Ctrl ctrl) {
-            //
-            // The InitializeComponent() call is required for Windows Forms designer support.
-            //
             InitializeComponent();
             this.ctrl = ctrl;
+            txtUser.Focus();
         }
 
         void BtnCreareClick(object sender, EventArgs e) {
             string username = txtUser.Text;
             string pass = txtPass.Text;
-            string drepturi = cmbDrepturi.SelectedText;
+            string drepturi = cmbDrepturi.Text;
 
             if (AreFieldsValid())
                 ctrl.AddNewUser(username, pass, drepturi);

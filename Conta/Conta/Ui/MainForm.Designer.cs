@@ -66,6 +66,7 @@ namespace Conta.Ui
 			this.utilizatoriToolStripMenuItem.Name = "utilizatoriToolStripMenuItem";
 			this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
 			this.utilizatoriToolStripMenuItem.Text = "Utilizatori";
+			this.utilizatoriToolStripMenuItem.Click += new System.EventHandler(this.UtilizatoriToolStripMenuItemClick);
 			// 
 			// MainForm
 			// 

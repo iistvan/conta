@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Data;
 using Conta.Ui;
 using Conta.Repository;
 using System.Windows.Forms;
@@ -26,6 +27,10 @@ namespace Conta.Controller {
 		
 		public Boolean TestConnectionToDB() {
 			return repo.TestConnectionToDB();			
+		}
+		
+		public DataSet FelhasznalokDataSet() {
+			return repo.FelhasznalokDataSet();
 		}
 		
 		public Boolean FreshInstall() {

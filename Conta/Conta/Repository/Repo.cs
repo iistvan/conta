@@ -8,6 +8,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -117,7 +118,16 @@ namespace Conta.Repository {
 		}
 		
 		public void AddNewUser(string u, string p, string d) {
-//			string query = "INSERT INTO Utilizatori values;
+			string query = "INSERT INTO Utilizatori (nume, parola, drepturi) VALUES ('" + u + "', '" + p + "', '" + d + "')";
+			if (this.OpenConnection() == true) {
+				MySqlCommand cmd = new MySqlCommand(query, connection);
+				try {
+					cmd.ExecuteNonQuery();				
+				} catch (MySqlException ex) {
+					MessageBox.Show(ex.Message);
+				}
+				this.CloseConnection();
+			}
 		}
 		
 		public List<String> GetUtilizatori() {
@@ -134,6 +144,16 @@ namespace Conta.Repository {
 				this.CloseConnection();
 			}
 			return utilizatori;
+		}
+
+		public DataSet FelhasznalokDataSet() {
+			DataSet dataSet = new DataSet();
+			if (this.OpenConnection()) {
+				MySqlDataAdapter dataAdapter = new MySqlDataAdapter("SELECT nume as Nume, drepturi as Drepturi FROM Utilizatori", connection);
+				dataAdapter.Fill(dataSet);
+				this.CloseConnection();
+			}
+			return dataSet;
 		}		
 		
 		//Insert statement

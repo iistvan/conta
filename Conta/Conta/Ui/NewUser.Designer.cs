@@ -36,7 +36,6 @@ namespace Conta.Ui
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -44,21 +43,14 @@ namespace Conta.Ui
 			this.txtPass = new System.Windows.Forms.TextBox();
 			this.cmbDrepturi = new System.Windows.Forms.ComboBox();
 			this.btnCreare = new System.Windows.Forms.Button();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// label1
-			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(119, 20);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(105, 23);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Utilizator nou";
 			// 
 			// label2
 			// 
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(13, 66);
+			this.label2.Location = new System.Drawing.Point(19, 28);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 23);
 			this.label2.TabIndex = 1;
@@ -67,7 +59,7 @@ namespace Conta.Ui
 			// label3
 			// 
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(13, 89);
+			this.label3.Location = new System.Drawing.Point(19, 51);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 2;
@@ -76,7 +68,7 @@ namespace Conta.Ui
 			// label4
 			// 
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(12, 112);
+			this.label4.Location = new System.Drawing.Point(19, 74);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(100, 23);
 			this.label4.TabIndex = 3;
@@ -84,17 +76,17 @@ namespace Conta.Ui
 			// 
 			// txtUser
 			// 
-			this.txtUser.Location = new System.Drawing.Point(119, 63);
+			this.txtUser.Location = new System.Drawing.Point(125, 25);
 			this.txtUser.Name = "txtUser";
-			this.txtUser.Size = new System.Drawing.Size(141, 20);
+			this.txtUser.Size = new System.Drawing.Size(141, 21);
 			this.txtUser.TabIndex = 4;
 			// 
 			// txtPass
 			// 
-			this.txtPass.Location = new System.Drawing.Point(119, 89);
+			this.txtPass.Location = new System.Drawing.Point(125, 51);
 			this.txtPass.Name = "txtPass";
 			this.txtPass.PasswordChar = '*';
-			this.txtPass.Size = new System.Drawing.Size(141, 20);
+			this.txtPass.Size = new System.Drawing.Size(141, 21);
 			this.txtPass.TabIndex = 5;
 			// 
 			// cmbDrepturi
@@ -104,7 +96,7 @@ namespace Conta.Ui
 			this.cmbDrepturi.Items.AddRange(new object[] {
 			"Administrator",
 			"Altul"});
-			this.cmbDrepturi.Location = new System.Drawing.Point(119, 114);
+			this.cmbDrepturi.Location = new System.Drawing.Point(125, 74);
 			this.cmbDrepturi.Name = "cmbDrepturi";
 			this.cmbDrepturi.Size = new System.Drawing.Size(141, 24);
 			this.cmbDrepturi.TabIndex = 6;
@@ -112,36 +104,53 @@ namespace Conta.Ui
 			// btnCreare
 			// 
 			this.btnCreare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCreare.Location = new System.Drawing.Point(111, 169);
+			this.btnCreare.Location = new System.Drawing.Point(81, 142);
 			this.btnCreare.Name = "btnCreare";
-			this.btnCreare.Size = new System.Drawing.Size(113, 27);
+			this.btnCreare.Size = new System.Drawing.Size(149, 27);
 			this.btnCreare.TabIndex = 7;
-			this.btnCreare.Text = "Creare utilizator";
+			this.btnCreare.Text = "Salveaza";
 			this.btnCreare.UseVisualStyleBackColor = true;
 			this.btnCreare.Click += new System.EventHandler(this.BtnCreareClick);
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.cmbDrepturi);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Controls.Add(this.txtPass);
+			this.groupBox1.Controls.Add(this.txtUser);
+			this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.groupBox1.Location = new System.Drawing.Point(12, 12);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(285, 118);
+			this.groupBox1.TabIndex = 8;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Date utilizator";
 			// 
 			// NewUser
 			// 
 			this.AcceptButton = this.btnCreare;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(336, 237);
+			this.ClientSize = new System.Drawing.Size(310, 181);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnCreare);
-			this.Controls.Add(this.cmbDrepturi);
-			this.Controls.Add(this.txtPass);
-			this.Controls.Add(this.txtUser);
-			this.Controls.Add(this.label4);
-			this.Controls.Add(this.label3);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "NewUser";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Creare utilizator";
+			this.Text = "Adaugare utilizator";
+			this.TopMost = true;
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;

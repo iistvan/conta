@@ -59,5 +59,9 @@ namespace Conta.Ui
 				LoadLoginWindow();
 			}
 		}
+		void UtilizatoriToolStripMenuItemClick(object sender, EventArgs e) {
+			UsersForm usersForm = new UsersForm(ctrl);
+			usersForm.Show();
+		}
 	}
 }

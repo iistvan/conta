@@ -47,5 +47,8 @@ namespace Conta.Ui
 		void BtnIesireClick(object sender, EventArgs e) {
 			ctrl.Exit();
 		}
+		void CmbUtilizatoriSelectedIndexChanged(object sender, EventArgs e) {
+			txtPass.Focus();
+		}
 	}
 }
