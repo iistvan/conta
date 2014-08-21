@@ -46,7 +46,6 @@ namespace Conta.Repository {
 				connection.Open();
 			} catch (MySqlException ex) {
 				MessageBox.Show("Test: Eroare la conectare la baza de date:\n" + ex.Message, "Eroare conectare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				Application.Exit();
 				return false;
 			}
 			connection.Close();

@@ -23,20 +23,12 @@ namespace Conta.Ui
 		Ctrl ctrl;
 		
 		public MainForm(Ctrl ctrl) {
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
-			InitializeComponent();
-			
+			InitializeComponent();			
 			this.ctrl = ctrl;
-			this.IsMdiContainer = true;
-			
-			//Adatbazishoz kapcsolodas teszt			
-			if (!ctrl.TestConnectionToDB()) {				
-				Application.Exit();
-				return;
-			}
-			
+			this.IsMdiContainer = true;						
+		}
+		
+		public void LoadLoginWindow(){			
 			//Van-e felhasznalo mar az adatbazisban?
 			if (ctrl.FreshInstall()) {
 				newUser = new NewUser(ctrl);
@@ -53,10 +45,19 @@ namespace Conta.Ui
 			}
 		}
 		
-		void AdaugareToolStripMenuItemClick(object sender, EventArgs e) {
-				newUser = new NewUser(ctrl);
-				newUser.MdiParent = this;
-				newUser.Show();
+//		void AdaugareToolStripMenuItemClick(object sender, EventArgs e) {
+//				newUser = new NewUser(ctrl);
+//				newUser.MdiParent = this;
+//				newUser.Show();
+//		}
+		
+		void MainFormLoad(object sender, EventArgs e) {			
+			//Adatbazishoz kapcsolodas teszt
+			if (!ctrl.TestConnectionToDB()) {
+				ctrl.Exit();
+			} else {
+				LoadLoginWindow();
+			}
 		}
 	}
 }
