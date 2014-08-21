@@ -27,7 +27,7 @@ namespace Conta.Ui {
 		
 		void BtnAdaugaClick(object sender, EventArgs e) {
 			NewUser newUserForm = new NewUser(ctrl, this);
-			newUserForm.Show();
+			newUserForm.ShowDialog();
 		}
 		
 		public void UpdateUsersList() {

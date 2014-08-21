@@ -40,10 +40,6 @@ namespace Conta.Ui {
 			}
 		}
 		
-		void LoginFormFormClosing(object sender, FormClosingEventArgs e) {
-			ctrl.Exit();
-		}
-		
 		void BtnIesireClick(object sender, EventArgs e) {
 			ctrl.Exit();
 		}

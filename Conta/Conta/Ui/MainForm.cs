@@ -24,33 +24,19 @@ namespace Conta.Ui
 		
 		public MainForm(Ctrl ctrl) {
 			InitializeComponent();			
-			this.ctrl = ctrl;
-			this.IsMdiContainer = true;						
+			this.ctrl = ctrl;					
 		}
 		
 		public void LoadLoginWindow(){			
 			//Van-e felhasznalo mar az adatbazisban?
 			if (ctrl.FreshInstall()) {
 				newUser = new NewUser(ctrl, new UsersForm(ctrl));
-				newUser.MdiParent = this;
-				newUser.Show();
+				newUser.ShowDialog();
 			} else {
 				loginForm = new LoginForm(ctrl);
-				loginForm.MdiParent = this;
-//				loginForm.Owner = this;
-				loginForm.Show();	
-				
-//				loginForm.ShowDialog();
-//				while (loginForm.Visible)
-//					this.Enabled = false;
+				loginForm.ShowDialog();					
 			}
 		}
-		
-//		void AdaugareToolStripMenuItemClick(object sender, EventArgs e) {
-//				newUser = new NewUser(ctrl);
-//				newUser.MdiParent = this;
-//				newUser.Show();
-//		}
 		
 		void MainFormLoad(object sender, EventArgs e) {			
 			//Adatbazishoz kapcsolodas teszt
