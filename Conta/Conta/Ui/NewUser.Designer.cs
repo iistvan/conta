@@ -80,6 +80,8 @@ namespace Conta.Ui
 			this.txtUser.Name = "txtUser";
 			this.txtUser.Size = new System.Drawing.Size(141, 21);
 			this.txtUser.TabIndex = 4;
+			this.txtUser.Enter += new System.EventHandler(this.TxtUserEnter);
+			this.txtUser.Leave += new System.EventHandler(this.TxtUserLeave);
 			// 
 			// txtPass
 			// 
@@ -88,6 +90,8 @@ namespace Conta.Ui
 			this.txtPass.PasswordChar = '*';
 			this.txtPass.Size = new System.Drawing.Size(141, 21);
 			this.txtPass.TabIndex = 5;
+			this.txtPass.Enter += new System.EventHandler(this.TxtPassEnter);
+			this.txtPass.Leave += new System.EventHandler(this.TxtPassLeave);
 			// 
 			// cmbDrepturi
 			// 
@@ -100,6 +104,8 @@ namespace Conta.Ui
 			this.cmbDrepturi.Name = "cmbDrepturi";
 			this.cmbDrepturi.Size = new System.Drawing.Size(141, 24);
 			this.cmbDrepturi.TabIndex = 6;
+			this.cmbDrepturi.Enter += new System.EventHandler(this.CmbDrepturiEnter);
+			this.cmbDrepturi.Leave += new System.EventHandler(this.CmbDrepturiLeave);
 			// 
 			// btnCreare
 			// 

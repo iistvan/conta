@@ -125,7 +125,10 @@ namespace Conta.Repository {
 				try {
 					cmd.ExecuteNonQuery();				
 				} catch (MySqlException ex) {
-					MessageBox.Show(ex.Message);
+					if (ex.Number == 1062)
+            			MessageBox.Show("Exista deja un utilizator cu acest nume.", "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					else
+						MessageBox.Show(ex.Message, "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					sikerult = false;
 				}
 				this.CloseConnection();

@@ -19,10 +19,12 @@ namespace Conta.Ui {
     /// </summary>
     public partial class NewUser : Form {
         Ctrl ctrl;
+        UsersForm usersForm;
 
-        public NewUser(Ctrl ctrl) {
+        public NewUser(Ctrl ctrl, UsersForm usersForm) {
             InitializeComponent();
             this.ctrl = ctrl;
+            this.usersForm = usersForm;
             txtUser.Focus();
         }
 
@@ -35,27 +37,41 @@ namespace Conta.Ui {
             	if (ctrl.AddNewUser(username, pass, drepturi)) { // Ha sikeresen hozzaadta
             		MessageBox.Show("Utilizatorul a fost adaugat cu succes.", "Adaugare reusita", MessageBoxButtons.OK, MessageBoxIcon.Information);
             		this.Close();
+            		usersForm.UpdateUsersList();
             	}
+	            else {
+            		txtUser.Focus();
+            		txtUser.BackColor = Color.LightSalmon;
+	            }
         }
 
         private Boolean AreFieldsValid() {
             StringBuilder errors = new StringBuilder();
+            txtUser.BackColor = Color.White;
+            txtPass.BackColor = Color.White;
+            cmbDrepturi.BackColor = Color.White;
 
             //Validate username
             Regex validator = new Regex(@"^[a-z][a-z0-9]+$");
 
-            if (!validator.Match(txtUser.Text).Success)
+            if (!validator.Match(txtUser.Text).Success) {
                 errors.AppendLine("Numele de utilizator poate contine doar litere mici si cifre.");
+                txtUser.BackColor = Color.LightSalmon;
+            }
 
             //Validate pass
-            if (!validator.Match(txtPass.Text).Success)
+            if (!validator.Match(txtPass.Text).Success) {
                 errors.AppendLine("Parola poate contine doar litere mici si cifre.");
+                txtPass.BackColor = Color.LightSalmon;
+            }
 
             //Validate drepturi		   
             string drepturi = cmbDrepturi.Text;
             if (!drepturi.Equals("Administrator", StringComparison.Ordinal))
-                if (!drepturi.Equals("Altul", StringComparison.Ordinal))
+            	if (!drepturi.Equals("Altul", StringComparison.Ordinal)) {
                     errors.AppendLine("Nu ati selectat drepturi.");
+                    cmbDrepturi.BackColor = Color.LightSalmon;
+            	}
 
             if (errors.ToString() == String.Empty)
                 return true;
@@ -63,5 +79,29 @@ namespace Conta.Ui {
                 MessageBox.Show(errors.ToString(), "Validare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
+        
+		void TxtUserEnter(object sender, EventArgs e) {
+        	txtUser.BackColor = Color.LightGoldenrodYellow;
+		}
+        
+		void TxtUserLeave(object sender, EventArgs e) {
+        	txtUser.BackColor = Color.White;
+		}
+        
+		void TxtPassEnter(object sender, EventArgs e) {
+        	txtUser.BackColor = Color.LightGoldenrodYellow;
+		}
+        
+		void TxtPassLeave(object sender, EventArgs e) {
+        	txtUser.BackColor = Color.White;
+		}
+        
+		void CmbDrepturiEnter(object sender, EventArgs e) {
+        	txtUser.BackColor = Color.LightGoldenrodYellow;
+		}
+        
+		void CmbDrepturiLeave(object sender, EventArgs e) {
+        	txtUser.BackColor = Color.White;
+		}
     }
 }

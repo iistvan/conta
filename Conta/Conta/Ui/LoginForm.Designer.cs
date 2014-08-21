@@ -103,10 +103,11 @@ namespace Conta.Ui
 			// 
 			// cmbUtilizatori
 			// 
+			this.cmbUtilizatori.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbUtilizatori.FormattingEnabled = true;
 			this.cmbUtilizatori.Location = new System.Drawing.Point(166, 21);
 			this.cmbUtilizatori.Name = "cmbUtilizatori";
-			this.cmbUtilizatori.Size = new System.Drawing.Size(147, 21);
+			this.cmbUtilizatori.Size = new System.Drawing.Size(147, 23);
 			this.cmbUtilizatori.TabIndex = 0;
 			this.cmbUtilizatori.SelectedIndexChanged += new System.EventHandler(this.CmbUtilizatoriSelectedIndexChanged);
 			this.cmbUtilizatori.Enter += new System.EventHandler(this.CmbUtilizatoriEnter);

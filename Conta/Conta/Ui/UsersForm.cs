@@ -22,14 +22,18 @@ namespace Conta.Ui {
 		public UsersForm(Ctrl ctrl) {
 			InitializeComponent();
 			this.ctrl = ctrl;
-			DataSet dataSet = ctrl.FelhasznalokDataSet();
-			this.dataGridView1.DataSource = dataSet;
-			this.dataGridView1.DataMember = dataSet.Tables[0].TableName;
+			UpdateUsersList();
 		}
 		
 		void BtnAdaugaClick(object sender, EventArgs e) {
-			NewUser newUserForm = new NewUser(ctrl);
+			NewUser newUserForm = new NewUser(ctrl, this);
 			newUserForm.Show();
+		}
+		
+		public void UpdateUsersList() {
+			DataSet dataSet = ctrl.FelhasznalokDataSet();
+			this.dataGridView1.DataSource = dataSet;
+			this.dataGridView1.DataMember = dataSet.Tables[0].TableName;
 		}
 	}
 }

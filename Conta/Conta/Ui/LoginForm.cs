@@ -27,7 +27,6 @@ namespace Conta.Ui {
 		private void PopulateCmbUtilizatori() {
 			foreach (String s in ctrl.GetUtilizatori())
 				cmbUtilizatori.Items.Add(s);
-//			cmbUtilizatori.Focus();
 		}
 		
 		void BtnLoginClick(object sender, EventArgs e) {
@@ -35,8 +34,10 @@ namespace Conta.Ui {
 			string pass = txtPass.Text;
 			if (ctrl.Login(username, pass))
 				this.Dispose();
-			else
-				MessageBox.Show("Parola incorecta.", "Autentificare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);			
+			else {
+				MessageBox.Show("Parola incorecta.", "Autentificare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);	
+				txtPass.BackColor = Color.LightSalmon;
+			}
 		}
 		
 		void LoginFormFormClosing(object sender, FormClosingEventArgs e) {
@@ -48,6 +49,7 @@ namespace Conta.Ui {
 		}
 		
 		void CmbUtilizatoriSelectedIndexChanged(object sender, EventArgs e) {
+			txtPass.Clear();
 			txtPass.Focus();
 		}
 		

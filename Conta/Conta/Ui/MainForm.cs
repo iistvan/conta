@@ -31,7 +31,7 @@ namespace Conta.Ui
 		public void LoadLoginWindow(){			
 			//Van-e felhasznalo mar az adatbazisban?
 			if (ctrl.FreshInstall()) {
-				newUser = new NewUser(ctrl);
+				newUser = new NewUser(ctrl, new UsersForm(ctrl));
 				newUser.MdiParent = this;
 				newUser.Show();
 			} else {
