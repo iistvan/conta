@@ -37,7 +37,7 @@ namespace Conta.Ui
 			if (ctrl.Login(username, pass))
 				this.Dispose();
 			else
-				MessageBox.Show("Parola incorecta!", "Autentificare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);			
+				MessageBox.Show("Parola incorecta.", "Autentificare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);			
 		}
 		
 		void LoginFormFormClosing(object sender, FormClosingEventArgs e) {
