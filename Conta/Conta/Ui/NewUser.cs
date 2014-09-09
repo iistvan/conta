@@ -52,10 +52,10 @@ namespace Conta.Ui {
             cmbDrepturi.BackColor = Color.White;
 
             //Validate username
-            Regex validator = new Regex(@"^[a-z][a-z0-9]+$");
+            Regex validator = new Regex(@"^[a-zA-Z][a-zA-Z0-9]+$");
 
             if (!validator.Match(txtUser.Text).Success) {
-                errors.AppendLine("Numele de utilizator poate contine doar litere mici si cifre.");
+                errors.AppendLine("Numele de utilizator poate contine doar litere si cifre.");
                 txtUser.BackColor = Color.LightSalmon;
             }
 

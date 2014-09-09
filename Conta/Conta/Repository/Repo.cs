@@ -140,7 +140,7 @@ namespace Conta.Repository {
 			List<String> utilizatori = new List<String>();
 			MySqlDataReader dr;
 			if (this.OpenConnection()) {
-				MySqlCommand cmd = new MySqlCommand("SELECT nume FROM Utilizatori", connection);
+				MySqlCommand cmd = new MySqlCommand("SELECT nume FROM Utilizatori ORDER BY nume", connection);
 				dr = cmd.ExecuteReader();
 
 				while (dr.Read())
@@ -155,7 +155,7 @@ namespace Conta.Repository {
 		public DataSet FelhasznalokDataSet() {
 			DataSet dataSet = new DataSet();
 			if (this.OpenConnection()) {
-				MySqlDataAdapter dataAdapter = new MySqlDataAdapter("SELECT nume as Nume, drepturi as Drepturi FROM Utilizatori", connection);
+				MySqlDataAdapter dataAdapter = new MySqlDataAdapter("SELECT nume as Nume, drepturi as Drepturi FROM Utilizatori ORDER BY nume", connection);
 				dataAdapter.Fill(dataSet);
 				this.CloseConnection();
 			}
