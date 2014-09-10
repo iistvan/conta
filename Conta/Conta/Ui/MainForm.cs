@@ -48,7 +48,7 @@ namespace Conta.Ui
 		}
 		void UtilizatoriToolStripMenuItemClick(object sender, EventArgs e) {
 			UsersForm usersForm = new UsersForm(ctrl);
-			usersForm.Show();
+			usersForm.ShowDialog();
 		}
 	}
 }

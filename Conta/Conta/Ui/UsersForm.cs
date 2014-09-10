@@ -18,6 +18,7 @@ namespace Conta.Ui {
 	/// </summary>
 	public partial class UsersForm : Form {
 		Ctrl ctrl;
+		NewUser newUserForm;
 		
 		public UsersForm(Ctrl ctrl) {
 			InitializeComponent();
@@ -26,7 +27,7 @@ namespace Conta.Ui {
 		}
 		
 		void BtnAdaugaClick(object sender, EventArgs e) {
-			NewUser newUserForm = new NewUser(ctrl, this);
+			newUserForm = new NewUser(ctrl, this);
 			newUserForm.ShowDialog();
 		}
 		
@@ -34,6 +35,6 @@ namespace Conta.Ui {
 			DataSet dataSet = ctrl.FelhasznalokDataSet();
 			this.dataGridView1.DataSource = dataSet;
 			this.dataGridView1.DataMember = dataSet.Tables[0].TableName;
-		}
+		}		
 	}
 }

@@ -36,13 +36,15 @@ namespace Conta.Ui {
             if (AreFieldsValid())
             	if (ctrl.AddNewUser(username, pass, drepturi)) { // Ha sikeresen hozzaadta
             		MessageBox.Show("Utilizatorul a fost adaugat cu succes.", "Adaugare reusita", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            		this.Close();
             		usersForm.UpdateUsersList();
+            		this.Close();
+            		return;
             	}
 	            else {
             		txtUser.Focus();
             		txtUser.BackColor = Color.LightSalmon;
 	            }
+    		this.DialogResult = DialogResult.None;
         }
 
         private Boolean AreFieldsValid() {
@@ -89,19 +91,19 @@ namespace Conta.Ui {
 		}
         
 		void TxtPassEnter(object sender, EventArgs e) {
-        	txtUser.BackColor = Color.LightGoldenrodYellow;
+        	txtPass.BackColor = Color.LightGoldenrodYellow;
 		}
         
 		void TxtPassLeave(object sender, EventArgs e) {
-        	txtUser.BackColor = Color.White;
+        	txtPass.BackColor = Color.White;
 		}
         
 		void CmbDrepturiEnter(object sender, EventArgs e) {
-        	txtUser.BackColor = Color.LightGoldenrodYellow;
+        	cmbDrepturi.BackColor = Color.LightGoldenrodYellow;
 		}
         
 		void CmbDrepturiLeave(object sender, EventArgs e) {
-        	txtUser.BackColor = Color.White;
+        	cmbDrepturi.BackColor = Color.White;
 		}
     }
 }
