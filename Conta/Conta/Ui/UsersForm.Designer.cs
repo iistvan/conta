@@ -71,13 +71,13 @@ namespace Conta.Ui
 			this.dataGridView1.Location = new System.Drawing.Point(12, 12);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.ReadOnly = true;
-			this.dataGridView1.Size = new System.Drawing.Size(340, 150);
+			this.dataGridView1.Size = new System.Drawing.Size(386, 179);
 			this.dataGridView1.TabIndex = 0;
 			// 
 			// btnAdauga
 			// 
 			this.btnAdauga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAdauga.Location = new System.Drawing.Point(362, 12);
+			this.btnAdauga.Location = new System.Drawing.Point(406, 12);
 			this.btnAdauga.Name = "btnAdauga";
 			this.btnAdauga.Size = new System.Drawing.Size(83, 27);
 			this.btnAdauga.TabIndex = 1;
@@ -89,7 +89,7 @@ namespace Conta.Ui
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(457, 180);
+			this.ClientSize = new System.Drawing.Size(501, 206);
 			this.Controls.Add(this.btnAdauga);
 			this.Controls.Add(this.dataGridView1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

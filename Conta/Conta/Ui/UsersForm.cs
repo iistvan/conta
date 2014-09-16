@@ -24,6 +24,11 @@ namespace Conta.Ui {
 			InitializeComponent();
 			this.ctrl = ctrl;
 			UpdateUsersList();
+			DataGridViewLinkColumn link = new DataGridViewLinkColumn();
+			link.Name = "Modificare";
+			link.UseColumnTextForLinkValue = true;
+			link.Text = "sterge/parola";
+            dataGridView1.Columns.Add(link);			
 		}
 		
 		void BtnAdaugaClick(object sender, EventArgs e) {
@@ -34,7 +39,7 @@ namespace Conta.Ui {
 		public void UpdateUsersList() {
 			DataSet dataSet = ctrl.FelhasznalokDataSet();
 			this.dataGridView1.DataSource = dataSet;
-			this.dataGridView1.DataMember = dataSet.Tables[0].TableName;
+			this.dataGridView1.DataMember = dataSet.Tables[0].TableName;			
 		}		
 	}
 }

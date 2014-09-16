@@ -17,22 +17,28 @@ namespace Conta.Ui {
 	/// </summary>
 	public partial class LoginForm : Form {
 		Ctrl ctrl;
+		LoginRepo loginRepo;
 		
 		public LoginForm(Ctrl ctrl) {			
-			InitializeComponent();			
+			InitializeComponent();		
 			this.ctrl = ctrl;
+			Initialize();
+		}
+		
+		private void Initialize() {	
+			loginRepo = new LoginRepo();
 			PopulateCmbUtilizatori();
 		}
 		
 		private void PopulateCmbUtilizatori() {
-			foreach (String s in ctrl.GetUtilizatori())
+			foreach (String s in loginRepo.GetUtilizatori())
 				cmbUtilizatori.Items.Add(s);
 		}
 		
 		void BtnLoginClick(object sender, EventArgs e) {
 			string username = cmbUtilizatori.Text;
 			string pass = txtPass.Text;
-			if (ctrl.Login(username, pass))
+			if (loginRepo.Login(username, pass))
 				this.Dispose();
 			else {
 				MessageBox.Show("Parola incorecta.", "Autentificare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);	

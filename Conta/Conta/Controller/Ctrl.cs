@@ -39,13 +39,13 @@ namespace Conta.Controller {
 			return false;
 		}
 		
-		public Boolean Login(string u, string p) {
-			return repo.Login(u, p);
-		}
+//		public Boolean Login(string u, string p) {
+//			return repo.Login(u, p);
+//		}
 		
-		public List<String> GetUtilizatori() {
-			return repo.GetUtilizatori();
-		}
+//		public List<String> GetUtilizatori() {
+//			return repo.GetUtilizatori();
+//		}
 		
 		public Boolean AddNewUser(string u, string p, string d) {
 			return repo.AddNewUser(u, p, d);

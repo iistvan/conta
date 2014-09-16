@@ -19,7 +19,7 @@ namespace Conta.Repository {
 	/// Description of DBConnect.
 	/// </summary>
 	public class Repo {
-		private MySqlConnection connection;
+		public MySqlConnection connection;
 		private string server;
 		private string database;
 		private string uid;
@@ -46,7 +46,7 @@ namespace Conta.Repository {
 			try {
 				connection.Open();
 			} catch (MySqlException ex) {
-				MessageBox.Show("Test: Eroare la conectare la baza de date:\n" + ex.Message, "Eroare conectare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("TestConnection: Eroare la conectare la baza de date:\n" + ex.Message, "Eroare conectare", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return false;
 			}
 			connection.Close();
@@ -96,26 +96,26 @@ namespace Conta.Repository {
 				return Count;
 			}
 		}
-		
-		public Boolean Login(string u, string p) {
-			string query = "SELECT Count(*) FROM Utilizatori where nume = '" + u + "' and parola = '" + p + "'";
-			int Count = -1;
-			
-			//Open Connection
-			if (this.OpenConnection() == true) {
-				//Create Mysql Command
-				MySqlCommand cmd = new MySqlCommand(query, connection);
-				
-				//ExecuteScalar will return one value
-				Count = int.Parse(cmd.ExecuteScalar() + "");
-				
-				//close Connection
-				this.CloseConnection();
-			}
-			if (Count < 1)
-				return false;
-			return true;
-		}
+//		
+//		public Boolean Login(string u, string p) {
+//			string query = "SELECT Count(*) FROM Utilizatori where nume = '" + u + "' and parola = '" + p + "'";
+//			int Count = -1;
+//			
+//			//Open Connection
+//			if (this.OpenConnection() == true) {
+//				//Create Mysql Command
+//				MySqlCommand cmd = new MySqlCommand(query, connection);
+//				
+//				//ExecuteScalar will return one value
+//				Count = int.Parse(cmd.ExecuteScalar() + "");
+//				
+//				//close Connection
+//				this.CloseConnection();
+//			}
+//			if (Count < 1)
+//				return false;
+//			return true;
+//		}
 		
 		public Boolean AddNewUser(string u, string p, string d) {
 			string query = "INSERT INTO Utilizatori (nume, parola, drepturi) VALUES ('" + u + "', '" + p + "', '" + d + "')";
@@ -136,28 +136,30 @@ namespace Conta.Repository {
 			return sikerult;
 		}
 		
-		public List<String> GetUtilizatori() {
-			List<String> utilizatori = new List<String>();
-			MySqlDataReader dr;
-			if (this.OpenConnection()) {
-				MySqlCommand cmd = new MySqlCommand("SELECT nume FROM Utilizatori ORDER BY nume", connection);
-				dr = cmd.ExecuteReader();
-
-				while (dr.Read())
-					utilizatori.Add(dr[0].ToString());
-  
-				dr.Close();
-				this.CloseConnection();
-			}
-			return utilizatori;
-		}
+//		public List<String> GetUtilizatori() {
+//			List<String> utilizatori = new List<String>();
+//			MySqlDataReader dr;
+//			if (this.OpenConnection()) {
+//				MySqlCommand cmd = new MySqlCommand("SELECT nume FROM Utilizatori ORDER BY nume", connection);
+//				dr = cmd.ExecuteReader();
+//
+//				while (dr.Read())
+//					utilizatori.Add(dr[0].ToString());
+//  
+//				dr.Close();
+//				this.CloseConnection();
+//			}
+//			return utilizatori;
+//		}
 
 		public DataSet FelhasznalokDataSet() {
 			DataSet dataSet = new DataSet();
 			if (this.OpenConnection()) {
 				MySqlDataAdapter dataAdapter = new MySqlDataAdapter("SELECT nume as Nume, drepturi as Drepturi FROM Utilizatori ORDER BY nume", connection);
-				dataAdapter.Fill(dataSet);
+				dataAdapter.Fill(dataSet);				
 				this.CloseConnection();
+				
+//				dataSet.Tables["Utilizatori"].Columns.Add(new DataGridViewLinkColumn());
 			}
 			return dataSet;
 		}		
