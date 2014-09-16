@@ -68,6 +68,8 @@ namespace Conta.Ui
 			// 
 			// txtPass
 			// 
+			this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.txtPass.ForeColor = System.Drawing.SystemColors.HotTrack;
 			this.txtPass.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.txtPass.Location = new System.Drawing.Point(166, 55);
 			this.txtPass.Name = "txtPass";
@@ -103,6 +105,7 @@ namespace Conta.Ui
 			// 
 			// cmbUtilizatori
 			// 
+			this.cmbUtilizatori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cmbUtilizatori.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbUtilizatori.FormattingEnabled = true;
 			this.cmbUtilizatori.Location = new System.Drawing.Point(166, 21);
