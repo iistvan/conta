@@ -16,11 +16,7 @@ namespace Conta.Ui
 	/// Description of LoginRepo.
 	/// </summary>
 	public class LoginRepo: Repository.Repo
-	{
-		public LoginRepo()
-		{
-		}
-		
+	{		
 		public List<String> GetUtilizatori() {
 			List<String> utilizatori = new List<String>();
 			MySqlDataReader dr;
