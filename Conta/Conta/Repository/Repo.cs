@@ -38,7 +38,8 @@ namespace Conta.Repository {
 			password = "shivashakti";
 			string connectionString;
 			connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-			
+//			connection.ConnectionTimeout=1;
+						
 			connection = new MySqlConnection(connectionString);
 		}
 		
