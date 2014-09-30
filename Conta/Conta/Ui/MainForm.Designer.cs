@@ -39,6 +39,7 @@ namespace Conta.Ui
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.administrareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.utilizatoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.configSocietateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -55,7 +56,8 @@ namespace Conta.Ui
 			// administrareToolStripMenuItem
 			// 
 			this.administrareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.utilizatoriToolStripMenuItem});
+			this.utilizatoriToolStripMenuItem,
+			this.configSocietateToolStripMenuItem});
 			this.administrareToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
 			this.administrareToolStripMenuItem.Name = "administrareToolStripMenuItem";
 			this.administrareToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
@@ -64,9 +66,15 @@ namespace Conta.Ui
 			// utilizatoriToolStripMenuItem
 			// 
 			this.utilizatoriToolStripMenuItem.Name = "utilizatoriToolStripMenuItem";
-			this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+			this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
 			this.utilizatoriToolStripMenuItem.Text = "Utilizatori";
 			this.utilizatoriToolStripMenuItem.Click += new System.EventHandler(this.UtilizatoriToolStripMenuItemClick);
+			// 
+			// configSocietateToolStripMenuItem
+			// 
+			this.configSocietateToolStripMenuItem.Name = "configSocietateToolStripMenuItem";
+			this.configSocietateToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+			this.configSocietateToolStripMenuItem.Text = "Config. Societate";
 			// 
 			// MainForm
 			// 
@@ -88,5 +96,6 @@ namespace Conta.Ui
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem administrareToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem utilizatoriToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem configSocietateToolStripMenuItem;
 	}
 }
