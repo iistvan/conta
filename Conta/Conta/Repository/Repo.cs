@@ -97,62 +97,7 @@ namespace Conta.Repository {
 				return Count;
 			}
 		}
-//		
-//		public Boolean Login(string u, string p) {
-//			string query = "SELECT Count(*) FROM Utilizatori where nume = '" + u + "' and parola = '" + p + "'";
-//			int Count = -1;
-//			
-//			//Open Connection
-//			if (this.OpenConnection() == true) {
-//				//Create Mysql Command
-//				MySqlCommand cmd = new MySqlCommand(query, connection);
-//				
-//				//ExecuteScalar will return one value
-//				Count = int.Parse(cmd.ExecuteScalar() + "");
-//				
-//				//close Connection
-//				this.CloseConnection();
-//			}
-//			if (Count < 1)
-//				return false;
-//			return true;
-//		}
 		
-//		public Boolean AddNewUser(string u, string p, string d) {
-//			string query = "INSERT INTO Utilizatori (nume, parola, drepturi) VALUES ('" + u + "', '" + p + "', '" + d + "')";
-//			Boolean sikerult = true;
-//			if (this.OpenConnection() == true) {
-//				MySqlCommand cmd = new MySqlCommand(query, connection);
-//				try {
-//					cmd.ExecuteNonQuery();				
-//				} catch (MySqlException ex) {
-//					if (ex.Number == 1062)
-//            			MessageBox.Show("Exista deja un utilizator cu acest nume.", "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//					else
-//						MessageBox.Show(ex.Message, "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-//					sikerult = false;
-//				}
-//				this.CloseConnection();
-//			}
-//			return sikerult;
-//		}
-		
-//		public List<String> GetUtilizatori() {
-//			List<String> utilizatori = new List<String>();
-//			MySqlDataReader dr;
-//			if (this.OpenConnection()) {
-//				MySqlCommand cmd = new MySqlCommand("SELECT nume FROM Utilizatori ORDER BY nume", connection);
-//				dr = cmd.ExecuteReader();
-//
-//				while (dr.Read())
-//					utilizatori.Add(dr[0].ToString());
-//  
-//				dr.Close();
-//				this.CloseConnection();
-//			}
-//			return utilizatori;
-//		}
-
 		public DataSet FelhasznalokDataSet() {
 			DataSet dataSet = new DataSet();
 			if (this.OpenConnection()) {

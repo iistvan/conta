@@ -18,8 +18,7 @@ namespace Conta.Ui {
 	/// </summary>
 	public partial class UsersForm : Form {
 		Ctrl ctrl;
-		NewUser newUserForm;
-		
+		NewUser newUserForm;		
 		
 		/*
 		 * TODO: Lehet hogy nem kell majd ide se a CTRL!

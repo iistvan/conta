@@ -37,19 +37,7 @@ namespace Conta.Controller {
 			if (repo.NrOfUsersInDB() == 0)
 				return true;
 			return false;
-		}
-		
-//		public Boolean Login(string u, string p) {
-//			return repo.Login(u, p);
-//		}
-		
-//		public List<String> GetUtilizatori() {
-//			return repo.GetUtilizatori();
-//		}
-		
-//		public Boolean AddNewUser(string u, string p, string d) {
-//			return repo.AddNewUser(u, p, d);
-//		}
+		}		
 		
 		public void Exit() {
 			Application.Exit();
