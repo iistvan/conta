@@ -47,9 +47,9 @@ namespace Conta.Controller {
 //			return repo.GetUtilizatori();
 //		}
 		
-		public Boolean AddNewUser(string u, string p, string d) {
-			return repo.AddNewUser(u, p, d);
-		}
+//		public Boolean AddNewUser(string u, string p, string d) {
+//			return repo.AddNewUser(u, p, d);
+//		}
 		
 		public void Exit() {
 			Application.Exit();

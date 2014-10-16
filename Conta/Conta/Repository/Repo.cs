@@ -118,24 +118,24 @@ namespace Conta.Repository {
 //			return true;
 //		}
 		
-		public Boolean AddNewUser(string u, string p, string d) {
-			string query = "INSERT INTO Utilizatori (nume, parola, drepturi) VALUES ('" + u + "', '" + p + "', '" + d + "')";
-			Boolean sikerult = true;
-			if (this.OpenConnection() == true) {
-				MySqlCommand cmd = new MySqlCommand(query, connection);
-				try {
-					cmd.ExecuteNonQuery();				
-				} catch (MySqlException ex) {
-					if (ex.Number == 1062)
-            			MessageBox.Show("Exista deja un utilizator cu acest nume.", "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					else
-						MessageBox.Show(ex.Message, "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					sikerult = false;
-				}
-				this.CloseConnection();
-			}
-			return sikerult;
-		}
+//		public Boolean AddNewUser(string u, string p, string d) {
+//			string query = "INSERT INTO Utilizatori (nume, parola, drepturi) VALUES ('" + u + "', '" + p + "', '" + d + "')";
+//			Boolean sikerult = true;
+//			if (this.OpenConnection() == true) {
+//				MySqlCommand cmd = new MySqlCommand(query, connection);
+//				try {
+//					cmd.ExecuteNonQuery();				
+//				} catch (MySqlException ex) {
+//					if (ex.Number == 1062)
+//            			MessageBox.Show("Exista deja un utilizator cu acest nume.", "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//					else
+//						MessageBox.Show(ex.Message, "Adaugare esuata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+//					sikerult = false;
+//				}
+//				this.CloseConnection();
+//			}
+//			return sikerult;
+//		}
 		
 //		public List<String> GetUtilizatori() {
 //			List<String> utilizatori = new List<String>();

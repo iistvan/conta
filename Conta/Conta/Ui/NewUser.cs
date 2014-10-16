@@ -17,24 +17,30 @@ namespace Conta.Ui {
     /// <summary>
     /// Window for new user
     /// </summary>
+    /// 
+       
     public partial class NewUser : Form {
-        Ctrl ctrl;
         UsersForm usersForm;
+        NewUserRepo newUserRepo;
 
-        public NewUser(Ctrl ctrl, UsersForm usersForm) {
+        public NewUser(UsersForm usersForm) {
             InitializeComponent();
-            this.ctrl = ctrl;
             this.usersForm = usersForm;
-            txtUser.Focus();
+            Initialize();
         }
 
+        private void Initialize() {
+        	txtUser.Focus();
+        	newUserRepo = new NewUserRepo();
+        }
+        
         void BtnCreareClick(object sender, EventArgs e) {
             string username = txtUser.Text;
             string pass = txtPass.Text;
             string drepturi = cmbDrepturi.Text;
 
             if (AreFieldsValid())
-            	if (ctrl.AddNewUser(username, pass, drepturi)) { // Ha sikeresen hozzaadta
+            	if (newUserRepo.AddNewUser(username, pass, drepturi)) { // Ha sikeresen hozzaadta
             		MessageBox.Show("Utilizatorul a fost adaugat cu succes.", "Adaugare reusita", MessageBoxButtons.OK, MessageBoxIcon.Information);
             		usersForm.UpdateUsersList();
             		this.Close();

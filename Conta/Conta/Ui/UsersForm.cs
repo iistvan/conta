@@ -20,6 +20,11 @@ namespace Conta.Ui {
 		Ctrl ctrl;
 		NewUser newUserForm;
 		
+		
+		/*
+		 * TODO: Lehet hogy nem kell majd ide se a CTRL!
+		 */
+		
 		public UsersForm(Ctrl ctrl) {
 			InitializeComponent();
 			this.ctrl = ctrl;
@@ -32,7 +37,7 @@ namespace Conta.Ui {
 		}
 		
 		void BtnAdaugaClick(object sender, EventArgs e) {
-			newUserForm = new NewUser(ctrl, this);
+			newUserForm = new NewUser(this);
 			newUserForm.ShowDialog();
 		}
 		

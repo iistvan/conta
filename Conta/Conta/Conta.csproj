@@ -72,6 +72,9 @@
     <Compile Include="Ui\NewUser.Designer.cs">
       <DependentUpon>NewUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ui\NewUserRepo.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\UsersForm.cs" />
     <Compile Include="Ui\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
