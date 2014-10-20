@@ -19,7 +19,7 @@ namespace Conta.Ui
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBoxCUI;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -45,7 +45,7 @@ namespace Conta.Ui
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.button2 = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxCUI = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabControl1.SuspendLayout();
@@ -65,7 +65,7 @@ namespace Conta.Ui
 			// tabPage1
 			// 
 			this.tabPage1.Controls.Add(this.button2);
-			this.tabPage1.Controls.Add(this.textBox1);
+			this.tabPage1.Controls.Add(this.textBoxCUI);
 			this.tabPage1.Controls.Add(this.label1);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
@@ -85,13 +85,14 @@ namespace Conta.Ui
 			this.button2.UseVisualStyleBackColor = true;
 			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
-			// textBox1
+			// textBoxCUI
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(87, 20);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(126, 22);
-			this.textBox1.TabIndex = 1;
+			this.textBoxCUI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxCUI.Location = new System.Drawing.Point(87, 20);
+			this.textBoxCUI.Name = "textBoxCUI";
+			this.textBoxCUI.Size = new System.Drawing.Size(126, 22);
+			this.textBoxCUI.TabIndex = 1;
+			this.textBoxCUI.Focus();
 			// 
 			// label1
 			// 
@@ -112,7 +113,7 @@ namespace Conta.Ui
 			this.tabPage2.Text = "Alte setări";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// ConfigSocietate
+			// ConfigSocietateForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +122,7 @@ namespace Conta.Ui
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
-			this.Name = "ConfigSocietate";
+			this.Name = "ConfigSocietateForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Configurare date Societate";
 			this.Click += new System.EventHandler(this.Button2Click);

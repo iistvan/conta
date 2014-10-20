@@ -28,7 +28,8 @@ namespace Conta.Ui
 		}
 		void Button2Click(object sender, EventArgs e)
 		{
-			String lekerdezes="http://openapi.ro/api/companies/529983.xml";
+			String lekerdezes;
+			lekerdezes="http://openapi.ro/api/companies/"+this.textBoxCUI.Text+".xml";
 			XmlDocument docXml = new XmlDocument();
 			docXml.Load(lekerdezes);
 			XmlNodeList cui,denumire,adresa,oras,judet;
