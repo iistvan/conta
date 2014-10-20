@@ -30,7 +30,7 @@ namespace Conta.Ui
 		public void LoadLoginWindow(){			
 			//Van-e felhasznalo mar az adatbazisban?
 			if (ctrl.FreshInstall()) {
-				newUser = new NewUser(ctrl, new UsersForm(ctrl));
+				newUser = new NewUser(new UsersForm(ctrl));
 				newUser.ShowDialog();
 			} else {
 				loginForm = new LoginForm(ctrl);
