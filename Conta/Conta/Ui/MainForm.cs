@@ -43,12 +43,21 @@ namespace Conta.Ui
 			if (!ctrl.TestConnectionToDB()) {
 				ctrl.Exit();
 			} else {
-				LoadLoginWindow();
+			//	LoadLoginWindow();
 			}
 		}
 		void UtilizatoriToolStripMenuItemClick(object sender, EventArgs e) {
 			UsersForm usersForm = new UsersForm(ctrl);
 			usersForm.ShowDialog();
 		}
+		void MenuStrip1ItemClicked(object sender, ToolStripItemClickedEventArgs e){
+	
+		}
+		void ConfigSocietateToolStripMenuItemClick(object sender, EventArgs e){
+			ConfigSocietateForm configSocietateForm= new ConfigSocietateForm(ctrl);
+			configSocietateForm.ShowDialog();
+		}
+		
+		
 	}
 }

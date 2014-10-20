@@ -57,6 +57,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Repo.cs" />
+    <Compile Include="Ui\ConfigSocietateForm.cs" />
+    <Compile Include="Ui\ConfigSocietateForm.Designer.cs">
+      <DependentUpon>ConfigSocietateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ui\LoginForm.cs" />
     <Compile Include="Ui\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -84,6 +88,9 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Ui\ConfigSocietateForm.resx">
+      <DependentUpon>ConfigSocietateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ui\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

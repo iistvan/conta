@@ -52,6 +52,7 @@ namespace Conta.Ui
 			this.menuStrip1.Size = new System.Drawing.Size(963, 28);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
+			this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1ItemClicked);
 			// 
 			// administrareToolStripMenuItem
 			// 
@@ -66,15 +67,16 @@ namespace Conta.Ui
 			// utilizatoriToolStripMenuItem
 			// 
 			this.utilizatoriToolStripMenuItem.Name = "utilizatoriToolStripMenuItem";
-			this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
+			this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
 			this.utilizatoriToolStripMenuItem.Text = "Utilizatori";
 			this.utilizatoriToolStripMenuItem.Click += new System.EventHandler(this.UtilizatoriToolStripMenuItemClick);
 			// 
 			// configSocietateToolStripMenuItem
 			// 
 			this.configSocietateToolStripMenuItem.Name = "configSocietateToolStripMenuItem";
-			this.configSocietateToolStripMenuItem.Size = new System.Drawing.Size(191, 24);
-			this.configSocietateToolStripMenuItem.Text = "Config. Societate";
+			this.configSocietateToolStripMenuItem.Size = new System.Drawing.Size(222, 24);
+			this.configSocietateToolStripMenuItem.Text = "Configurare Societate";
+			this.configSocietateToolStripMenuItem.Click += new System.EventHandler(this.ConfigSocietateToolStripMenuItemClick);
 			// 
 			// MainForm
 			// 
