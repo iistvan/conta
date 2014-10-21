@@ -83,6 +83,7 @@
     <Compile Include="Ui\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Verificari\Verificari.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -107,6 +108,7 @@
   <ItemGroup>
     <Folder Include="Controller" />
     <Folder Include="Domain" />
+    <Folder Include="Verificari" />
     <Folder Include="Repository" />
     <Folder Include="Ui" />
   </ItemGroup>
