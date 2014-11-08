@@ -20,32 +20,29 @@ namespace Conta.Ui
 	public partial class ConfigSocietateForm : Form
 	{
 		Ctrl ctrl;
-		public ConfigSocietateForm(Ctrl ctrl)
-		{
+		public ConfigSocietateForm(Ctrl ctrl) {
 			InitializeComponent();
-			this.ctrl=ctrl;
+			this.ctrl = ctrl;
 			
 		}
-		void Button2Click(object sender, EventArgs e)
-		{
+		void Button2Click(object sender, EventArgs e) {
 			String lekerdezes;
-			lekerdezes="http://openapi.ro/api/companies/"+this.textBoxCUI.Text+".xml";
+			lekerdezes = "http://openapi.ro/api/companies/" + this.textBoxCUI.Text + ".xml";
 			XmlDocument docXml = new XmlDocument();
-			XmlNodeList cui,denumire,adresa,oras,judet;
+			XmlNodeList cui, denumire, adresa, oras, judet;
 			try {
 				docXml.Load(lekerdezes);
-			}
-			catch (Exception ex) {
+			} catch (Exception ex) {
 				MessageBox.Show("C.U.I  Invalid sau negasit in BD:\n" + ex.Message, "CUI Negasit", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 							
 			cui = docXml.GetElementsByTagName("cif");
-			denumire=docXml.GetElementsByTagName("name");
-			adresa=docXml.GetElementsByTagName("address");
-			oras=docXml.GetElementsByTagName("city");
-			judet=docXml.GetElementsByTagName("state");
+			denumire = docXml.GetElementsByTagName("name");
+			adresa = docXml.GetElementsByTagName("address");
+			oras = docXml.GetElementsByTagName("city");
+			judet = docXml.GetElementsByTagName("state");
 			
-			String eredmeny=cui[0].InnerXml+'/'+denumire[0].InnerXml+'/'+adresa[0].InnerXml+'/'+oras[0].InnerXml+'/'+judet[0].InnerXml+'/';
+			String eredmeny = cui[0].InnerXml + '/' + denumire[0].InnerXml + '/' + adresa[0].InnerXml + '/' + oras[0].InnerXml + '/' + judet[0].InnerXml + '/';
 			MessageBox.Show(eredmeny, "Eredmeny", MessageBoxButtons.OK);
 	
 		}
